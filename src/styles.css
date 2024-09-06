@@ -1,0 +1,27 @@
+@import "primeng/resources/themes/bootstrap4-dark-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+body {
+  font-family: "Andale Mono", monospace;
+  font-size: small;
+  line-height: 1.4;
+  margin: 0;
+  color: #03C03C;
+  background-color: #121212;
+}
+
+input {
+  color: #03C03C;
+  background: none;
+  border: none;
+  caret-color: #03C03C;
+  font-size: small;
+  font-family: "Andale Mono", monospace;
+}
+
+input:focus {
+  outline: none;
+}
+
+

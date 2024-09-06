@@ -1,0 +1,19 @@
+<p-menubar id="header" [style]="{'background-color': '#242424'}">
+  <ng-template pTemplate="end">
+    <!--
+    <p-menu #menu [model]="items" [popup]="true" [style]="{'background-color': '#242424'}"></p-menu>
+    <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-cog"></button>
+    -->
+    <button pButton type="button" class="mr-2" (click)="sidebarVisible = true" icon="pi pi-cog"></button>
+    <div class="card flex justify-content-center">
+      <p-sidebar [(visible)]="sidebarVisible" position="right" [style]="{'background-color': '#242424'}">
+        <ng-template pTemplate="content">
+          <div>
+            <label>Dark Mode</label>
+            <p-inputSwitch formControlName="checked"></p-inputSwitch>
+          </div>
+        </ng-template>
+      </p-sidebar>
+    </div>
+  </ng-template>
+</p-menubar>

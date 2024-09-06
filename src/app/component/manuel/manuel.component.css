@@ -1,0 +1,34 @@
+.manuel {
+  display: block;
+}
+
+.section {
+
+}
+
+.title {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 10px 0 0 0;
+}
+
+.statement {
+  margin: 0 0 0 50px;
+}
+
+.option {
+  display: flex;
+  margin-bottom: 0;
+}
+
+.key {
+  width: 75px;
+}
+
+.value {
+  margin-left: 25px;
+}
+
+.manuel {
+  color: #FFFFFF;
+}

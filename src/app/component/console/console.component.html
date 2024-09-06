@@ -1,0 +1,4 @@
+<div id="console" *ngIf="isReady">
+  <app-console-output (event)="outputEvent($event)" [outputs]="outputs"/>
+  <app-console-input (event)="inputEvent($event)" [visible]="!isReadonly"/>
+</div>
