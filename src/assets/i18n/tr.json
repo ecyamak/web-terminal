@@ -2,5 +2,7 @@
   "console.prefix": "/~ $ ",
   "console.greeting": "Merhaba, dünya...",
   "console.info": "Daha fazla detay için, lütfen `man ecy` komutunu çalıştırınız.",
-  "console.invalid.message": "~ecy: geçersiz komut"
+  "console.invalid.message": "~ecy: geçersiz komut",
+  "lang.english": "İngilizce",
+  "lang.turkish": "Türkçe"
 }

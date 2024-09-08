@@ -6,13 +6,31 @@ import {DOCUMENT} from "@angular/common";
 })
 export class ThemeService {
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  defaultTheme!: string;
 
-  switchTheme(theme: string) {
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    this.defaultTheme = 'theme-dark';
+  }
+
+  toggleMode(isDark: boolean) {
+    let theme = isDark ? 'theme-dark' : 'theme-light';
+    this.changeTheme(theme);
+  }
+
+  changeTheme(theme: string) {
+    localStorage.setItem('theme', theme);
     let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
     if (themeLink) {
       themeLink.href = theme + '.css';
     }
+  }
+
+  getTheme() : string {
+    return localStorage.getItem('theme') ?? this.defaultTheme;
+  }
+
+  isThemeDark(): boolean {
+    return this.getTheme() === this.defaultTheme;
   }
 
 }

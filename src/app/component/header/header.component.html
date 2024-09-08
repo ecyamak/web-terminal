@@ -7,7 +7,7 @@
           <form [formGroup]="formGroup" class="py-1">
             <div class="flex align-items-center justify-content-between">
               <label>Dark Mode</label>
-              <p-inputSwitch id="darkMode" formControlName="darkMode" (onChange)="onDarkModeChange($event.checked)"></p-inputSwitch>
+              <p-inputSwitch id="darkMode" formControlName="isDark" (onChange)="onDarkModeChange($event.checked)"></p-inputSwitch>
             </div>
             <p-divider/>
             <div class="flex align-items-center justify-content-between">
@@ -24,7 +24,7 @@
               <label>Language</label>
               <p-selectButton
                   id="language"
-                  [options]="languageOptions"
+                  [options]="languageService.supportedLanguages"
                   formControlName="language"
                   allowEmpty="false"
                   optionLabel="icon"

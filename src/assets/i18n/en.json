@@ -2,5 +2,7 @@
   "console.prefix": "/~ $ ",
   "console.greeting": "Hello, world...",
   "console.info": "For more details, please run `man ecy`.",
-  "console.invalid.message": "~ecy: invalid command"
+  "console.invalid.message": "~ecy: invalid command",
+  "lang.english": "English",
+  "lang.turkish": "Turkish"
 }
