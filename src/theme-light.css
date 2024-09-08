@@ -1,0 +1,6 @@
+@import "primeng/resources/themes/aura-light-noir/theme.css";
+@import 'primeflex/themes/primeone-light.css';
+
+body {
+    background-color: #F2F2F2;
+}

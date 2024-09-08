@@ -2,13 +2,15 @@ import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Command} from "../../../common/enum/command";
 import {CommonSharedModule} from "../../../common/module/common.shared.module";
+import {InputTextModule} from "primeng/inputtext";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   standalone: true,
   selector: 'app-console-input',
   templateUrl: 'console.input.component.html',
   styleUrls: ['console.input.component.css'],
-  imports: [CommonSharedModule]
+  imports: [CommonSharedModule, InputTextModule]
 })
 export class ConsoleInputComponent implements OnInit {
 
@@ -18,7 +20,8 @@ export class ConsoleInputComponent implements OnInit {
 
   protected inputForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -42,7 +45,7 @@ export class ConsoleInputComponent implements OnInit {
       case Command.man:
         return this.event.emit([keys.toString()]);
       default:
-        return this.event.emit(["~ecy: invalid command"])
+        this.translate.get("console.invalid.message").subscribe((result: string) => this.event.emit([result]));
     }
   }
 

@@ -1,6 +1,6 @@
 <div id="console-input" *ngIf="visible">
   <form [formGroup]="inputForm" id="input-form" (submit)="submit()">
     <label for="command">{{'console.prefix' | translate}}</label>
-    <input id="command" formControlName="command" autofocus/>
+    <input class="command" name="command" id="command" formControlName="command" autofocus/>
   </form>
 </div>

@@ -1,19 +1,54 @@
-<p-menubar id="header" [style]="{'background-color': '#242424'}">
+<p-menubar id="header">
   <ng-template pTemplate="end">
-    <!--
-    <p-menu #menu [model]="items" [popup]="true" [style]="{'background-color': '#242424'}"></p-menu>
-    <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-cog"></button>
-    -->
-    <button pButton type="button" class="mr-2" (click)="sidebarVisible = true" icon="pi pi-cog"></button>
+    <p-button link="true" class="mr-2" icon="pi pi-cog" (onClick)="sidebarVisible = true"></p-button>
     <div class="card flex justify-content-center">
-      <p-sidebar [(visible)]="sidebarVisible" position="right" [style]="{'background-color': '#242424'}">
+      <p-sidebar [(visible)]="sidebarVisible" position="right">
         <ng-template pTemplate="content">
-          <div>
-            <label>Dark Mode</label>
-            <p-inputSwitch formControlName="checked"></p-inputSwitch>
-          </div>
+          <form [formGroup]="formGroup" class="py-1">
+            <div class="flex align-items-center justify-content-between">
+              <label>Dark Mode</label>
+              <p-inputSwitch id="darkMode" formControlName="darkMode" (onChange)="onDarkModeChange($event.checked)"></p-inputSwitch>
+            </div>
+            <p-divider/>
+            <div class="flex align-items-center justify-content-between">
+              <label>Font Color</label>
+              <p-colorPicker id="fontColor" formControlName="fontColor" (onChange)="onFontColorChange($event.value)"/>
+            </div>
+            <p-divider/>
+            <div class="flex align-items-center justify-content-between">
+              <label>Font Size</label>
+              <p-slider id="fontSize" formControlName="fontSize" step="1" min="0" max="3" class="pr-2" styleClass="w-5rem" (onChange)="onFontSizeChange($event.value)"/>
+            </div>
+            <p-divider/>
+            <div class="flex align-items-center justify-content-between">
+              <label>Language</label>
+              <p-selectButton
+                  id="language"
+                  [options]="languageOptions"
+                  formControlName="language"
+                  allowEmpty="false"
+                  optionLabel="icon"
+                  optionValue="code"
+                  (onChange)="onLanguageChange($event.value)">
+                <ng-template let-item pTemplate>
+                  <img alt="{{item.name}}" ngSrc="{{item.icon}}"
+                       width="16" height="16">
+                </ng-template>
+              </p-selectButton>
+            </div>
+            <div class="flex flex-row-reverse align-items-center">
+              <p-button id="restoreDefault" class="py-4" severity="secondary" label="Restore Default" (onClick)="onRestoreDefault()"></p-button>
+            </div>
+          </form>
         </ng-template>
       </p-sidebar>
     </div>
   </ng-template>
 </p-menubar>
+
+
+
+<!--
+<p-menubar id="header" [style]="{'background-color': '#242424'}">
+      <p-sidebar [(visible)]="sidebarVisible" position="right" [style]="{'background-color': '#242424'}">
+-->

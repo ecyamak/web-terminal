@@ -1,5 +1,6 @@
 {
   "console.prefix": "/~ $ ",
   "console.greeting": "Merhaba, dünya...",
-  "console.info": "Daha fazla detay için, lütfen `man ecy` komutunu çalıştırınız."
+  "console.info": "Daha fazla detay için, lütfen `man ecy` komutunu çalıştırınız.",
+  "console.invalid.message": "~ecy: geçersiz komut"
 }

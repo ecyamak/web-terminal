@@ -1,8 +1,6 @@
 ng-template {
-  background-color: #242424;
   font-family: "Arial", monospace;
   font-weight: bolder;
-  color: #FFFFFF;
 }
 
 ul {
@@ -25,10 +23,4 @@ li:last-child {
   position: absolute;
   top: 0;
   right: 0;
-}
-
-button {
-  background: none;
-  border: none;
-  color: #FFFFFF;
 }
